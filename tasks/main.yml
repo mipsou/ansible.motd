@@ -1,6 +1,15 @@
 ---
 # tasks file for arillso.motd
 
+- name: Build ascii art with environment
+  include_tasks: build_ascii_art.yml
+  when: motd_ascii_art_with_environment|bool == true
+  tags:
+    - ascii
+    - art
+    - banner
+    - environment
+
 - name: add OS specific variables
   include_vars: '{{ loop_vars }}'
   with_first_found:
