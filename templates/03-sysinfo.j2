@@ -13,8 +13,8 @@ TOTALMEM=$(free -m | head -n 2 | tail -n 1 | awk {'print $2'})MB
 MEMFREEREAL=$(free -m | head -n 2 | tail -n 1 | awk {'print $4'})MB
 SWAPUSAGE=$(free -m | tail -n 1 | awk {'print $3'})MB
 # Network
-$IP=$(which ip)
-GLOBALIPS=$($IP -o addr | awk '!/^[0-9]*: ?lo|link\/ether/ {print " "$2" : "$4}')
+CMD_IP=$(whereis ip | awk '{ print $2 }')
+GLOBALIPS=$( ${CMD_IP} -o addr | awk '!/^[0-9]*: ?lo|link\/ether/ {print " "$2" : "$4}')
 # Disk space
 DF=$(df -h {% for x in motd_exclude_disk_space %}-x {{ x }} {% endfor %}-l)
 
