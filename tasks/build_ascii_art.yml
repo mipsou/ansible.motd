@@ -1,0 +1,17 @@
+---
+# Build dynamicaly Logo and environment ascii art    
+- main: Build vars environment
+  vars:
+    mylogo:  "{{ lookup('file','files/logo.txt') }}"
+    myenv: "{{ lookup('file','files/' + motd_ascii_art_with_environment + '.txt') }}"
+    banner: "{{ mylogo + myenv }}"
+    mybannerfile: "files/banner.txt"
+  when: motd_ascii_art_with_environment_enabled| bool == true
+
+- name: write compiled banner
+  copy: content="{{ banner }}" dest="{{ mybannetfile }}"
+  when: motd_ascii_art_with_environment_enabled| bool == true
+
+- debug:
+  msg: "{{ mybanner }}"
+  when: motd_ascii_art_with_environment_enabled| bool == true
