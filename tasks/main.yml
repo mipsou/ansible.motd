@@ -3,7 +3,7 @@
 
 - name: Build ascii art with environment
   include_tasks: build_ascii_art.yml
-  when: motd_ascii_art_with_environment|bool == true
+  when: motd_ascii_art_with_environment_enabled|bool == true
   tags:
     - ascii
     - art
