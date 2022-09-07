@@ -16,3 +16,5 @@ motd_exclude_disk_space:
 motd_exclude_interfaces:
   - veth
   - br
+
+motd_ascii_art_with_environment: false
