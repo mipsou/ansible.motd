@@ -1,9 +1,16 @@
 ---
 # Build dynamicaly Logo and environment ascii art
-
+-  find:
+         paths:  .
+         #file_type: {{ myenvfile }}
+         recurse: yes
+         use_regex: yes
+         patterns:
+           - 'library'
+   register: files_matched_subdirectory
 - name: 'Debug some content vars'
   debug:
-    msg: "{{ mylogo}}{{ myenv }}"
+    msg: "{{ files_matched_subdirectory }}"
 
 - name: Write banner to text file
   copy: 
