@@ -1,6 +1,6 @@
 ---
 # Build dynamicaly Logo and environment ascii art    
-- main: Build vars environment
+- name: Build vars environment
   vars:
     mylogo:  "{{ lookup('file','files/logo.txt') }}"
     myenv: "{{ lookup('file','files/' + motd_ascii_art_with_environment + '.txt') }}"
