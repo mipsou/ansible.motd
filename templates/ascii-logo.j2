@@ -1,1 +1,5 @@
+{% if motd_ascii_art_with_environment_enabled == false %}
 {{ motd_ascii_art }}
+{% else %}
+{{ banner }}
+{% endif %}
