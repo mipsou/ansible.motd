@@ -8,6 +8,8 @@
          patterns:
            - 'library'
    register: files_matched_subdirectory
+   delegate_to: 127.0.0.1
+ 
 - name: 'Debug some content vars'
   debug:
     msg: "{{ files_matched_subdirectory }}"
