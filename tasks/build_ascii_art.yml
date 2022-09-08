@@ -1,18 +1,15 @@
 ---
 # Build dynamicaly Logo and environment ascii art
 
+- name: 'Debug some content vars'
+  debug:
+    msg: "{{ mylogo}}{{ myenv }}"
+
 - name: Write banner to text file
   copy: 
     content: "{{ banner }}"
     dest: "{{ mybannerfile }}"
   when: banner is defined and mybanner is defined
-  
-#- name: Build vars environment
-#  vars:
-#    mylogo:  "{{ lookup('file','files/logo.txt') }}"
-#    myenv: "{{ lookup('file','files/' + motd_ascii_art_with_environment + '.txt') }}"
-#    banner: "{{ mylogo + myenv }}"
-#    mybannerfile: "files/banner.txt"
 
 - name: 'Debug {{ banner }}'
   debug:
