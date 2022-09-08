@@ -18,6 +18,6 @@
 #    dest: "{{ mybannerfile }}"
 #  when: banner is defined and mybanner is defined
 
-- name: 'Debug {{ banner }}'
-  debug:
-    msg: "{{ lookup('file', mybannerfile, errors='strict') }}"
+#- name: 'Debug {{ banner }}'
+#  debug:
+#    msg: "{{ lookup('file', mybannerfile, errors='strict') }}"
