@@ -4,7 +4,7 @@
 - name: Write banner to text file
   copy: 
     content: "{{ banner }}"
-    dest: "{{ mybannetfile }}"
+    dest: "{{ mybannerfile }}"
   when: banner is defined and mybanner is defined
   
 #- name: Build vars environment
