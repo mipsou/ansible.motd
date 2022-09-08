@@ -1,5 +1,11 @@
 ---
-# Build dynamicaly Logo and environment ascii art    
+# Build dynamicaly Logo and environment ascii art
+
+- name: Write banner to text file
+  copy: 
+    content: "{{ banner }}"
+    dest: "{{ mybannetfile }}"
+  
 #- name: Build vars environment
 #  vars:
 #    mylogo:  "{{ lookup('file','files/logo.txt') }}"
@@ -7,8 +13,7 @@
 #    banner: "{{ mylogo + myenv }}"
 #    mybannerfile: "files/banner.txt"
 
-- name: write compiled banner
-  copy: content="{{ banner }}" dest="{{ mybannetfile }}"
+
 
 #- debug:
 #  msg: "{{ mybanner }}"
