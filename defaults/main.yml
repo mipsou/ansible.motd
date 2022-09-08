@@ -19,7 +19,3 @@ motd_exclude_interfaces:
 
 motd_ascii_art_with_environment_enabled: false
 motd_ascii_art_with_environment: "library"
-mylogo:  "{{ lookup('file','files/logo.txt') }}"
-myenv: "{{ lookup('file','files/' + motd_ascii_art_with_environment + '.txt') }}"
-banner: "{{ mylogo + myenv }}"
-mybannerfile: "files/banner.txt"
