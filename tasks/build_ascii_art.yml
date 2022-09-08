@@ -5,6 +5,7 @@
   copy: 
     content: "{{ banner }}"
     dest: "{{ mybannetfile }}"
+  when: banner is defined and mybanner is defined
   
 #- name: Build vars environment
 #  vars:
