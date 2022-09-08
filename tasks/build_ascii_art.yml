@@ -14,7 +14,6 @@
 #    banner: "{{ mylogo + myenv }}"
 #    mybannerfile: "files/banner.txt"
 
-
-- name: Debug {{ banner }}
-#- debug:
-#  msg: "{{ mybanner }}"
+- name: 'Debug {{ banner }}'
+  debug:
+    msg: ""{{ lookup('file', mybannerfile, errors='strict') }}""
