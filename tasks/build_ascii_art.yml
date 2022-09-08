@@ -4,31 +4,18 @@
          paths:  './'
          file_type: any
          recurse: yes
-         use_regex: yes
-         #patterns:
-         #  - 'library'
+         patterns: 'library'
    register: files_matched_subdirectory
    delegate_to: 127.0.0.1
  
+ - name: "list log files"
+  debug: var="{{ item.path }}"
+  with_items: "{{ files_matched_subdirectory.files }}
+  
 - name: 'Debug some content vars'
   debug:
-    msg: "{{ files_matched_subdirectory | map(attribute='path') | list }}"
+    msg: "{{ item.path }}"
   delegate_to: 127.0.0.1
-
-- name: "find directory xyz"
-  find:
-    paths: "./"
-    recurse: yes
-    file_type: any
-    #patterns: "library"
-  register: find_matches
-  delegate_to: 127.0.0.1
-
-- name: "print the path of our first result"
-  debug:
-    var: find_matches.files[0].path
-  when: find_matches is defined
-
 
 #- name: Write banner to text file
 #  copy: 
