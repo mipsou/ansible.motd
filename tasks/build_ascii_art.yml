@@ -1,12 +1,12 @@
 ---
 # Build dynamicaly Logo and environment ascii art
 -  find:
-         paths:  '.'
-         file_type: file
+         paths:  './'
+         file_type: any
          recurse: yes
          use_regex: yes
-         patterns:
-           - 'library'
+         #patterns:
+         #  - 'library'
    register: files_matched_subdirectory
    delegate_to: 127.0.0.1
  
@@ -17,10 +17,10 @@
 
 - name: "find directory xyz"
   find:
-    paths: "."
+    paths: "./"
     recurse: yes
-    file_type: file
-    patterns: "library"
+    file_type: any
+    #patterns: "library"
   register: find_matches
   delegate_to: 127.0.0.1
 
