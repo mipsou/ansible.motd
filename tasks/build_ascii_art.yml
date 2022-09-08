@@ -1,8 +1,8 @@
 ---
 # Build dynamicaly Logo and environment ascii art
 -  find:
-         paths:  .
-         #file_type: {{ myenvfile }}
+         paths:  '.'
+         file_type: file
          recurse: yes
          use_regex: yes
          patterns:
@@ -12,7 +12,7 @@
  
 - name: 'Debug some content vars'
   debug:
-    msg: "{{ library.files | map(attribute='path') | list }}"
+    msg: "{{ files_matched_subdirectory | map(attribute='path') | list }}"
   delegate_to: 127.0.0.1
 
 - name: "find directory xyz"
