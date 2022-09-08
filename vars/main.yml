@@ -1,6 +1,8 @@
 ---
 # vars file for ansible.motd
-mylogo:  "{{ lookup('file','files/logo.txt') }}"
-myenv: "{{ lookup('file','files/' + motd_ascii_art_with_environment + '.txt') }}"
+mylogofile: "files/logo.txt"
+mylogo:  "{{ lookup('file', mylogofile ) }}"
+myenvfile: "file/{{motd_ascii_art_with_environment}}.txt"
+myenv: "{{ lookup('file', myenvfile ) }}"
 banner: "{{ mylogo + myenv }}"
 mybannerfile: "files/banner.txt"
