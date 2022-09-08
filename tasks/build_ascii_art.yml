@@ -10,5 +10,5 @@
 - name: write compiled banner
   copy: content="{{ banner }}" dest="{{ mybannetfile }}"
 
-- debug:
-  msg: "{{ mybanner }}"
+#- debug:
+#  msg: "{{ mybanner }}"
