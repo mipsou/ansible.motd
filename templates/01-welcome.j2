@@ -1,5 +1,6 @@
 #!/bin/sh
-cat /etc/default/motd-ascii_art
+#cat /etc/default/motd-ascii_art
+printf "$(eval "echo \"$(</etc/default/motd-ascii_art)\"")"
 echo                                                             
 echo "---------------------------------------------------------------"
 echo "             This system is managed by Ansible                 "
