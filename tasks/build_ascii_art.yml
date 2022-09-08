@@ -1,11 +1,11 @@
 ---
 # Build dynamicaly Logo and environment ascii art    
-- name: Build vars environment
-  vars:
-    mylogo:  "{{ lookup('file','files/logo.txt') }}"
-    myenv: "{{ lookup('file','files/' + motd_ascii_art_with_environment + '.txt') }}"
-    banner: "{{ mylogo + myenv }}"
-    mybannerfile: "files/banner.txt"
+#- name: Build vars environment
+#  vars:
+#    mylogo:  "{{ lookup('file','files/logo.txt') }}"
+#    myenv: "{{ lookup('file','files/' + motd_ascii_art_with_environment + '.txt') }}"
+#    banner: "{{ mylogo + myenv }}"
+#    mybannerfile: "files/banner.txt"
 
 - name: write compiled banner
   copy: content="{{ banner }}" dest="{{ mybannetfile }}"
