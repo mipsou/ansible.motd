@@ -1,2 +1,6 @@
 ---
 # vars file for arillso.motd
+mylogo:  "{{ lookup('file','files/logo.txt') }}"
+myenv: "{{ lookup('file','files/' + motd_ascii_art_with_environment + '.txt') }}"
+banner: "{{ mylogo + myenv }}"
+mybannerfile: "files/banner.txt"
