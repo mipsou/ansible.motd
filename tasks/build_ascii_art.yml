@@ -16,4 +16,4 @@
 
 - name: 'Debug {{ banner }}'
   debug:
-    msg: ""{{ lookup('file', mybannerfile, errors='strict') }}""
+    msg: "{{ lookup('file', mybannerfile, errors='strict') }}"
