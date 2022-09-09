@@ -9,7 +9,7 @@
   delegate_to: 127.0.0.1
  
 - name: 'list log files'
-  debug: var="{{ item.path }}"
+  debug: var="{{ files_matched_subdirectory.path }}"
   with_items: "{{ files_matched_subdirectory.files }}"
   
 - name: 'Debug some content vars'
