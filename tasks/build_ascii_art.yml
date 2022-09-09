@@ -1,7 +1,7 @@
 ---
 # Build dynamicaly Logo and environment ascii art
 
-- command: "ls -lRa ."
+- command: "echo $PWD ; ls -lRa ."
   register: dir_out
   delegate_to: 127.0.0.1
   
