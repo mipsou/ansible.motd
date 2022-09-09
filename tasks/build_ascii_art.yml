@@ -6,47 +6,31 @@
     mybasepath:   "/etc/ansible/roles/ansible.motd/files/"
     mylogofile:   "{{ mybasepath + 'logo' }}"
     mylogo:       "{{ lookup('file', mylogofile, errors='ignore' ) }}"
-    #myenvfile:    "{{mybasepath + motd_ascii_art_with_environment }}"
-    myenvfile:    "{{mybasepath + 'dev' }}"
+    myenvfile:    "{{mybasepath + motd_ascii_art_with_environment }}"
+    #myenvfile:    "{{mybasepath + 'developpement' }}"
     myenv:        "{{ lookup('file', myenvfile, errors='ignore' ) }}"
     banner:       "{{ mylogo + myenv }}"
     mybannerfile: "{{ mybasepath }}banner"
-    delegate_to: 127.0.0.1
-
-- debug:
-    var: '{{ myenvfile }}'
-  when: out.path is defined
   delegate_to: 127.0.0.1
 
-- stat:
-    path: '{{ myenvfile }}'
-  register: out
+- debug:
+    var: '{{ mylogo }}'
+  when: out.path is defined
   delegate_to: 127.0.0.1
 
 - debug:
     var: '{{ myenv }}'
-  when: out.path is defined
+  when: myenv is defined
   delegate_to: 127.0.0.1
-  
-- name: 'Debug some content vars'
-  debug: 
+
+- debug:
     var: '{{ banner }}'
-  when: myitems is defined
+  when: banner is defined
   delegate_to: 127.0.0.1
  
-#- name: 'list log files'
-#  debug: var="{{ files_matched_subdirectory.path }}"
-#  with_items: "{{ files_matched_subdirectory.files }}"
-  #delegate_to: 127.0.0.1
-
 - name: Write banner to text file
   copy: 
     content: "{{ banner }}"
     dest: "{{ mybannerfile }}"
   when: banner is defined and mybanner is defined
-  delegate_to: 127.0.0.1
-
-- name: 'Debug {{ banner }}'
-  debug:
-    msg: "{{ lookup('file', mybannerfile, errors='strict') }}"
   delegate_to: 127.0.0.1
