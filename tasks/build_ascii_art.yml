@@ -10,7 +10,7 @@
  
  - name: "list log files"
   debug: var="{{ item.path }}"
-  with_items: "{{ files_matched_subdirectory.files }}
+  with_items: "{{ files_matched_subdirectory.files }}"
   
 - name: 'Debug some content vars'
   debug:
