@@ -17,9 +17,9 @@
     mybannerfile: "{{ mybasepath }}banner"
   delegate_to: 127.0.0.1
  
-- name: Write banner to text file
-  copy: 
-    content: "{{ banner }}"
-    dest: "{{ mybannerfile }}"
-  when: banner is defined and mybanner is defined
-  delegate_to: 127.0.0.1
+#- name: Write banner to text file
+#  copy: 
+#    content: "{{ banner }}"
+#    dest: "{{ mybannerfile }}"
+#  when: banner is defined and mybanner is defined
+#  delegate_to: 127.0.0.1
