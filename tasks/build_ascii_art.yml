@@ -1,7 +1,7 @@
 ---
 # Build dynamicaly Logo and environment ascii art
 
-- command: "pwd"
+- command: "find . -iname lib"
   register: dir_out
 
 - debug: var={{item}}
