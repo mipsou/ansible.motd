@@ -1,12 +1,19 @@
 ---
 # Build dynamicaly Logo and environment ascii art
+
+- command: "ls -lra ."
+  register: dir_out
+
+- debug: var={{item}}
+  with_items: dir_out.stdout_lines
+
 - name: Set some internal role vars
   set_fact:
     mylogofile:   "logo"
-    mylogo:       "{{ lookup('file', mylogofile ) }}"
+#    mylogo:       "{{ lookup('file', mylogofile ) }}"
     myenvfile:    "{{motd_ascii_art_with_environment}}"
-    myenv:        "{{ lookup('file', myenvfile ) }}"
-    banner:       "{{ mylogo + myenv }}"
+#    myenv:        "{{ lookup('file', myenvfile ) }}"
+#    banner:       "{{ mylogo + myenv }}"
     mybannerfile: "files/banner"
  
 - stat:
