@@ -19,8 +19,7 @@
   
 - name: 'Debug some content vars'
   debug: 
-    var:
-      - "files_matched_subdirectory.stdout_lines }}"
+    var: {{ files_matched_subdirectory.stdout_lines }}
    when: files_matched_subdirectory.path is defined
   #delegate_to: 127.0.0.1
  
