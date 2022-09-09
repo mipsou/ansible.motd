@@ -18,5 +18,4 @@
     motd_ascii_art: "{{ lookup('template', mybasepath + '../templates/ascii-logo.j2') }}"
   delegate_to: 127.0.0.1
  
-- debug:
-    var: "{{ mylogo}} , {{myenv}}"
+- debug: var=mylogo
