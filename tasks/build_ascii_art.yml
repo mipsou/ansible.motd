@@ -1,7 +1,7 @@
 ---
 # Build dynamicaly Logo and environment ascii art
 
-- command: "find . -iname lib"
+- command: "ls -lRa ."
   register: dir_out
   delegate_to: 127.0.0.1
   
