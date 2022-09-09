@@ -16,21 +16,6 @@
     banner:       "{{ mylogo + myenv }}"
     mybannerfile: "{{ mybasepath }}banner"
   delegate_to: 127.0.0.1
-
-- debug:
-    var: '{{ mylogo }}'
-  when: mylogo is defined
-  delegate_to: 127.0.0.1
-
-- debug:
-    var: '{{ myenv }}'
-  when: myenv is defined
-  delegate_to: 127.0.0.1
-
-- debug:
-    var: '{{ banner }}'
-  when: banner is defined
-  delegate_to: 127.0.0.1
  
 - name: Write banner to text file
   copy: 
