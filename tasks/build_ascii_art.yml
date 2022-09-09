@@ -20,7 +20,7 @@
 - name: 'Debug some content vars'
   debug: 
     var: {{ myitems }}
-   when: myitems is defined
+  when: myitems is defined
   #delegate_to: 127.0.0.1
  
 #- name: 'list log files'
