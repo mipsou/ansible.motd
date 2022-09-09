@@ -1,3 +1,5 @@
 ---
 # vars file for ansible.motd
 mybasepath:   "/etc/ansible/roles/ansible.motd/files/"
+mylogofile:   "{{ mybasepath + 'logo' }}"
+mylogo:       "{{ lookup('file', mylogofile, errors='ignore' ) }}"
