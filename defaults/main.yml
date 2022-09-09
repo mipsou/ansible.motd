@@ -18,4 +18,4 @@ motd_exclude_interfaces:
   - br
 
 motd_ascii_art_with_environment_enabled: false
-motd_ascii_art_with_environment: "library"
+motd_ascii_art_with_environment: "lib"
