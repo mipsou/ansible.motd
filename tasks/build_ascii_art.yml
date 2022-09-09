@@ -12,6 +12,7 @@
   debug: 
     var:
       - "files_matched_subdirectory.stdout_lines }}"
+   when: files_matched_subdirectory.path is defined
   #delegate_to: 127.0.0.1
  
 #- name: 'list log files'
