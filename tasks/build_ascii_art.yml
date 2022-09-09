@@ -2,11 +2,11 @@
 # Build dynamicaly Logo and environment ascii art
 
 - stats:
-         path: 'files/lib'
+    path: 'files/lib'
   register: out
 
 - debug:
-         var: {{ out }}
+    var: {{ out }}
   when: out.path is defined
 
 - find:
