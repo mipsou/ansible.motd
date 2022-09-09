@@ -1,7 +1,7 @@
 ---
 # Build dynamicaly Logo and environment ascii art
 
-- command: "ls -lra ."
+- command: "pwd"
   register: dir_out
 
 - debug: var={{item}}
