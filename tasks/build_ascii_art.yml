@@ -6,7 +6,7 @@
   register: out
 
 - debug:
-    var: {{ out }}
+    var: '{{ out }}'
   when: out.path is defined
 
 - find:
@@ -19,7 +19,7 @@
   
 - name: 'Debug some content vars'
   debug: 
-    var: {{ myitems }}
+    var: '{{ myitems }}'
   when: myitems is defined
   #delegate_to: 127.0.0.1
  
