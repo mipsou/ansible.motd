@@ -5,8 +5,8 @@
          file_type: any
          recurse: yes
          patterns: 'library'
-   register: files_matched_subdirectory
-   delegate_to: 127.0.0.1
+  register: files_matched_subdirectory
+  delegate_to: 127.0.0.1
  
 - name: 'list log files'
   debug: var="{{ item.path }}"
