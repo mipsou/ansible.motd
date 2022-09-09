@@ -13,8 +13,8 @@
     mylogo:       "{{ lookup('file', mylogofile, errors='ignore' ) }}"
     myenvfile:    "{{mybasepath + myenv }}"
     myenv:        "{{ lookup('file', myenvfile, errors='ignore' ) }}"
-    banner:       "{{ mylogo + myenv }}"
-    mybannerfile: "{{ mybasepath }}banner"
+    #banner:       "{{ mylogo + myenv }}"
+    #mybannerfile: "{{ mybasepath }}banner"
     motd_ascii_art: "{{ lookup('template', mybasepath + '../templates/ascii-logo.j2') }}"
   delegate_to: 127.0.0.1
  
