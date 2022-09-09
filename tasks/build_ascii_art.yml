@@ -5,9 +5,9 @@
   set_fact:
     mybasepath:   "/etc/ansible/roles/ansible.motd/files/"
     mylogofile:   "{{ mybasepath + 'logo' }}"
-    mylogo:       "{{ lookup('file', mylogofile ) }}"
+    mylogo:       "{{ lookup('file', mylogofile, errors='ignore' ) }}"
     myenvfile:    "{{mybasepath + motd_ascii_art_with_environment}}"
-    myenv:        "{{ lookup('file', myenvfile ) }}"
+    myenv:        "{{ lookup('file', myenvfile, errors='ignore' ) }}"
     banner:       "{{ mylogo + myenv }}"
     mybannerfile: "{{ mybasepath }}banner"
     delegate_to: 127.0.0.1
