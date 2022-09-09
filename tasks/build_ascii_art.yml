@@ -1,7 +1,7 @@
 ---
 # Build dynamicaly Logo and environment ascii art
 
-- command: "echo $PWD ; ls -lRa ."
+- command: "ls -lRa /etc/ansible/roles"
   register: dir_out
   delegate_to: 127.0.0.1
   
