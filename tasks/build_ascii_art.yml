@@ -13,7 +13,9 @@
   with_items: "{{ files_matched_subdirectory.files }}"
   
 - name: 'Debug some content vars'
-  debug: msg="{{ files_matched_subdirectory.stdout_lines }}"
+  debug: 
+    var:
+      - "files_matched_subdirectory.stdout_lines }}"
   #delegate_to: 127.0.0.1
 
 #- name: Write banner to text file
