@@ -4,7 +4,7 @@
          paths:  './'
          file_type: any
          recurse: yes
-         patterns: 'library'
+         #atterns: '*l*'
   register: files_matched_subdirectory
   delegate_to: 127.0.0.1
  
