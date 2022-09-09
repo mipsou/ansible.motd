@@ -15,6 +15,7 @@
     myenv:        "{{ lookup('file', myenvfile, errors='ignore' ) }}"
     banner:       "{{ mylogo + myenv }}"
     mybannerfile: "{{ mybasepath }}banner"
+    motd_ascii_art: "{{ banner }}"
   delegate_to: 127.0.0.1
  
 #- name: Write banner to text file
