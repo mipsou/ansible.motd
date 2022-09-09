@@ -1,6 +1,6 @@
 ---
 # Build dynamicaly Logo and environment ascii art
--  find:
+- find:
          paths:  './'
          file_type: any
          recurse: yes
@@ -8,7 +8,7 @@
    register: files_matched_subdirectory
    delegate_to: 127.0.0.1
  
- - name: "list log files"
+- name: 'list log files'
   debug: var="{{ item.path }}"
   with_items: "{{ files_matched_subdirectory.files }}"
   
