@@ -11,15 +11,15 @@
 
 - name: Set some internal role vars
   set_fact:
-    mylogofile:   "logo"
+    mylogofile:   "{{ mybasepath}}logo"
 #    mylogo:       "{{ lookup('file', mylogofile ) }}"
-    myenvfile:    "{{motd_ascii_art_with_environment}}"
+    myenvfile:    "{{mybasepath + motd_ascii_art_with_environment}}"
 #    myenv:        "{{ lookup('file', myenvfile ) }}"
 #    banner:       "{{ mylogo + myenv }}"
-    mybannerfile: "files/banner"
+    mybannerfile: "{{ mybasepath }}banner"
  
 - stat:
-    path: './files/lib'
+    path: '{{ mybasepath }}lib'
   register: out
 
 - debug:
