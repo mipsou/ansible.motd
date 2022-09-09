@@ -13,9 +13,8 @@
   with_items: "{{ files_matched_subdirectory.files }}"
   
 - name: 'Debug some content vars'
-  debug:
-    msg: "{{ item.path }}"
-  delegate_to: 127.0.0.1
+  debug: msg="{{ item.path }}"
+  #delegate_to: 127.0.0.1
 
 #- name: Write banner to text file
 #  copy: 
