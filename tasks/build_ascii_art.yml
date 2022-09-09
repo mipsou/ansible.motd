@@ -1,56 +1,48 @@
 ---
 # Build dynamicaly Logo and environment ascii art
 
-- command: "ls -lRa /etc/ansible/roles"
-  register: dir_out
-  delegate_to: 127.0.0.1
-  
-- debug: var={{item}}
-  with_items: dir_out.stdout_lines
-  delegate_to: 127.0.0.1
-
 - name: Set some internal role vars
   set_fact:
     mylogofile:   "{{ mybasepath}}logo"
-#    mylogo:       "{{ lookup('file', mylogofile ) }}"
+    mylogo:       "{{ lookup('file', mylogofile ) }}"
     myenvfile:    "{{mybasepath + motd_ascii_art_with_environment}}"
-#    myenv:        "{{ lookup('file', myenvfile ) }}"
-#    banner:       "{{ mylogo + myenv }}"
+    myenv:        "{{ lookup('file', myenvfile ) }}"
+    banner:       "{{ mylogo + myenv }}"
     mybannerfile: "{{ mybasepath }}banner"
- 
-- stat:
-    path: '{{ mybasepath }}lib'
-  register: out
 
 - debug:
-    var: '{{ out }}'
+    var: '{{ myenvfile }}'
   when: out.path is defined
+  delegate_to: 127.0.0.1
 
-- find:
-         paths:  './'
-         file_type: any
-         recurse: yes
-         patterns: '{{ myenvfile }}'
-  register: myitems
-  #delegate_to: 127.0.0.1
+- stat:
+    path: '{{ myenvfile }}'
+  register: out
+  delegate_to: 127.0.0.1
+
+- debug:
+    var: '{{ myenv }}'
+  when: out.path is defined
+  delegate_to: 127.0.0.1
   
 - name: 'Debug some content vars'
   debug: 
-    var: '{{ myitems }}'
+    var: '{{ banner }}'
   when: myitems is defined
-  #delegate_to: 127.0.0.1
+  delegate_to: 127.0.0.1
  
 #- name: 'list log files'
 #  debug: var="{{ files_matched_subdirectory.path }}"
 #  with_items: "{{ files_matched_subdirectory.files }}"
   #delegate_to: 127.0.0.1
 
-#- name: Write banner to text file
-#  copy: 
-#    content: "{{ banner }}"
-#    dest: "{{ mybannerfile }}"
-#  when: banner is defined and mybanner is defined
+- name: Write banner to text file
+  copy: 
+    content: "{{ banner }}"
+    dest: "{{ mybannerfile }}"
+  when: banner is defined and mybanner is defined
+  delegate_to: 127.0.0.1
 
-#- name: 'Debug {{ banner }}'
-#  debug:
-#    msg: "{{ lookup('file', mybannerfile, errors='strict') }}"
+- name: 'Debug {{ banner }}'
+  debug:
+    msg: "{{ lookup('file', mybannerfile, errors='strict') }}"
