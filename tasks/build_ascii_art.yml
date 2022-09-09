@@ -1,7 +1,7 @@
 ---
 # Build dynamicaly Logo and environment ascii art
 
-- stats:
+- stat:
     path: './files/lib'
   register: out
 
