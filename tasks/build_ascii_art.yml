@@ -6,18 +6,18 @@
          recurse: yes
          #atterns: '*l*'
   register: files_matched_subdirectory
-  delegate_to: 127.0.0.1
+  #delegate_to: 127.0.0.1
  
 - name: 'list log files'
   debug: var="{{ files_matched_subdirectory.path }}"
   with_items: "{{ files_matched_subdirectory.files }}"
-  delegate_to: 127.0.0.1
+  #delegate_to: 127.0.0.1
   
 - name: 'Debug some content vars'
   debug: 
     var:
       - "files_matched_subdirectory.stdout_lines }}"
-  delegate_to: 127.0.0.1
+  #delegate_to: 127.0.0.1
 
 #- name: Write banner to text file
 #  copy: 
