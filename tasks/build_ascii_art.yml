@@ -3,9 +3,11 @@
 
 - command: "find . -iname lib"
   register: dir_out
-
+  delegate_to: 127.0.0.1
+  
 - debug: var={{item}}
   with_items: dir_out.stdout_lines
+  delegate_to: 127.0.0.1
 
 - name: Set some internal role vars
   set_fact:
