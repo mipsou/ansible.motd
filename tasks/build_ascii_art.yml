@@ -2,7 +2,7 @@
 # Build dynamicaly Logo and environment ascii art
 
 - stats:
-    path: 'files/lib'
+    path: './files/lib'
   register: out
 
 - debug:
@@ -14,13 +14,13 @@
          file_type: any
          recurse: yes
          patterns: '{{ myenvfile }}'
-  register: files_matched_subdirectory
+  register: myitems
   #delegate_to: 127.0.0.1
   
 - name: 'Debug some content vars'
   debug: 
-    var: {{ files_matched_subdirectory }}
-   when: files_matched_subdirectory.path is defined
+    var: {{ myitems }}
+   when: myitems is defined
   #delegate_to: 127.0.0.1
  
 #- name: 'list log files'
