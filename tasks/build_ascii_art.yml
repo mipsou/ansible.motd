@@ -18,9 +18,5 @@
     motd_ascii_art: "{{ lookup('template', mybasepath + '../templates/ascii-logo.j2') }}"
   delegate_to: 127.0.0.1
  
-#- name: Write banner to text file
-#  copy: 
-#    content: "{{ banner }}"
-#    dest: "{{ mybannerfile }}"
-#  when: banner is defined and mybanner is defined
-#  delegate_to: 127.0.0.1
+- debug:
+    var: "{{ mylogo}} , {{myenv}}"
