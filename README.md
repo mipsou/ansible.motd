@@ -4,7 +4,7 @@
 
 ## Description
 
-Configuriet dynamic motd file on Ubuntu and Centos.
+Configure a dynamic motd file on Debian and Redhat like.
 
 ## Installation
 
