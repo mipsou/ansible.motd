@@ -29,7 +29,7 @@ None
 ```yml
 - hosts: all
   roles:
-    - arillso.motd
+    - mipsou.ansible_motd
 ```
 
 ## Author
