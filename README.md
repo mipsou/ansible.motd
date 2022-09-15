@@ -9,7 +9,7 @@ Configuriet dynamic motd file on Ubuntu and Centos.
 ## Installation
 
 ```bash
- ansible-galaxy install mipsou.motd
+ ansible-galaxy install mipsou.ansible_motd
 ```
 
 ## Requirements
